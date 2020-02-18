@@ -1,0 +1,29 @@
+var horse = ["only the owner can mount it", "high Con (roll w/ advantage any endurance check)", "pain tolerant (has 1d6 extra hp)", "high jumper (roll w/ advantage any jump)", "fast (+10' per round)",
+"tires easily (roll w/ disadvantage any endurance check)", "stubborn", "pain intolerant (jumps or bolts if hurt)", "slow (-10' per round)", "stays put without tying",
+"good swimmer (loves water)", "gassy (farts a lot)", "horse/pony mix (can live off grass)", "biter", "aggressive with horses of same sex", "brushes rider off when near trees", "afraid of water", "comes when whistled/called",
+"sure footed", "pretty fast (+5' per round)", "tends to go lame after galloping", "pretty slow (-5 per round)", "slow (-10' per round)", "greased lightning (+15' per round)", "afraid (rears if spooked)", 
+"bolts (runs away if startled)", "loyal (will protect owner)", "strong (can carry 10% more weight)"];
+
+console.log("Riding horses have 2 HD")
+console.log("The riding horse's condition is...")
+console.log("fair = " + ((Math.floor(Math.random() * 4) + 1) + (Math.floor(Math.random() * 4) + 1)) + " hp");
+console.log("average = " + ((Math.floor(Math.random() * 6) + 1) + (Math.floor(Math.random() * 6) + 1)) + " hp");
+console.log("good = " + (Math.floor(Math.random()* 6) + 7) + " hp");
+console.log(test(horse));
+
+console.log("\n");
+
+console.log("War horses have 3 HD")
+console.log("The war horse's condition is...")
+console.log("fair = " + ((Math.floor(Math.random() * 4) + 1) + (Math.floor(Math.random() * 4) + 1) + (Math.floor(Math.random() * 4) + 1)) + " hp");
+console.log("average = " + ((Math.floor(Math.random() * 6) + 1) + (Math.floor(Math.random() * 6) + 1) + (Math.floor(Math.random() * 6) + 1)) + " hp");
+console.log("good = " + ((Math.floor(Math.random() * 6) + 1) + (Math.floor(Math.random() * 6) + 1) + 6) + " hp");
+console.log(test(horse));
+
+function test(array) {
+    encRoll = Math.floor(Math.random() * (array.length));
+    encX = array[encRoll];
+    return encX;
+    };
+
+
