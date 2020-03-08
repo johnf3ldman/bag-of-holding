@@ -35,8 +35,9 @@ var innNoun = ["Axe", "Barrel", "Bear", "Bell", "Boot", "Bowl", "Bucket", "Candl
 
 function cook(test) {
     roll = Math.floor(Math.random() * (test.length));
-    result = test[roll];
-    return result;   
+    //result = test[roll];
+    //return result;  //this code works but not optimized
+    return test[roll];   
 }
 //removing an element from the strongDrink array using splice
 function test(food) {
@@ -114,24 +115,18 @@ switch(Math.floor((Math.random() * 6) + 1) + Math.floor((Math.random() * 6) + 1)
         console.log("The patrons appear to be fighting!");
 }
 
-
-/*deadly! All diners must make a Con save or suffer serious food poisoning!
-spoiled! One random person must make a Con save or suffer food poisoning!
-spoiled! One random person must make a Con save or suffer food poisoning!
-stale
-stale
-stale
-stale
-stale
-ok but not great...
-ok but not great...
-ok but not great...
-good
-good
-good
-good
-good
-excellent
-excellent
-excellent
-memorable!*/
+var a = cleanliness.indexOf(clean);//this returns the position of last element returned from an array
+//console.log(a);//prints the element last returned
+var sick = 0;
+sick = Math.floor(Math.random()*100 + 1);
+if (a == 0 && sick <= 25) {
+    console.log("The food is poisonous! Save vs poison or suffer 2d6 Con damage! Death may result!");
+} else if (a == 1 && sick <= 25) {
+    console.log("Something you eat is off...One random person must save vs poison of be sick for the next " + Math.floor(Math.random()*6 +1) + " days.");
+} else if (a <= 3 && sick <= 10) {
+    console.log("Something you eat is off...One random person must save vs poison or be sick for the next " + Math.floor(Math.random()*3 +1) + " days.");
+} else if (a >= 7 && sick <= 25) {
+    console.log("The meal is memorable! You have rarely had such a fine meal! Gain a +2 to all saves for the next " + Math.floor(Math.random()*3 +1) + " days.");
+} else {
+    console.log("The food seems safe to eat.");
+}
